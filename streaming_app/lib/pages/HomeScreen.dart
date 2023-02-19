@@ -5,11 +5,13 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return Scaffold(
+      body:  Center(
       child: Text(
-        'TESssT',
+        'TESsddddddsT',
         style: TextStyle(fontSize: 40),
       ),
+    ),
     );
   }
 }
