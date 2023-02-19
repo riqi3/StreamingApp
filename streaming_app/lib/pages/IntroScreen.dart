@@ -1,156 +1,204 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:introduction_screen/introduction_screen.dart';
+import 'package:outline_gradient_button/outline_gradient_button.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:streaming_app/constants.dart';
 
-class IntroScreen extends StatelessWidget {
+import '../elements/GreenBlur.dart';
+import '../elements/PinkBlur.dart';
+import '../widgets/IntroImage.dart';
+
+class IntroScreen extends StatefulWidget {
   const IntroScreen({super.key});
+
+  @override
+  State<IntroScreen> createState() => _IntroScreenState();
+}
+
+class _IntroScreenState extends State<IntroScreen> {
+  PageController _controller = PageController();
+
+  bool _onLastPage = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: IntroductionScreen(
-        globalBackgroundColor: bgColor,
-        scrollPhysics: BouncingScrollPhysics(),
-        pages: [
-          PageViewModel(
-            titleWidget: Padding(
-              padding: const EdgeInsets.only(
-                left: defaultPadding,
-                right: defaultPadding,
-              ),
-              child: Text(
-                'Watch movies in Virtual Reality',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: white,
-                  fontSize: titleSize + 8,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-            body: 'Download and watch offline wherever you are',
-            decoration: PageDecoration(
-              bodyPadding: EdgeInsets.only(
-                left: defaultPadding,
-                right: defaultPadding,
-              ),
-              bodyTextStyle: TextStyle(
-                  color: grey,
-                  fontSize: subtitleSize + 4,
-                  fontWeight: FontWeight.w300),
-            ),
-            image: Stack(
-              fit: StackFit.loose,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(
-                    right: 200,
-                    bottom: 100,
-                  ),
-                  child: Align(
-                    alignment: AlignmentDirectional.center,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(500.0),
-                      child: Container(
-                        width: 120,
-                        height: 120,
-                        decoration: BoxDecoration(
-                          color: neonPink,
-                        ),
+      body: Stack(
+        children: [
+          PageView(
+            controller: _controller,
+            onPageChanged: (index) {
+              setState(() {
+                _onLastPage = (index == 2);
+              });
+            },
+            children: [
+              Container(
+                color: bgColor,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: shapeSizing/2),
+                  child: Column(
+                    children: [
+                      Stack(
+                        fit: StackFit.loose,
+                        children: [
+                          PinkBlur(),
+                          GreenBlur(),
+                          IntroImage(),
+                        ],
                       ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                    left: 230,
-                    top: 120,
-                  ),
-                  child: Align(
-                    alignment: AlignmentDirectional.center,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(500.0),
-                      child: Container(
-                        width: 200,
-                        height: 200,
-                        decoration: BoxDecoration(
-                          color: neonGreen,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                BackdropFilter(
-                  filter: ImageFilter.blur(
-                    sigmaX: 60.0,
-                    sigmaY: 60.0,
-                  ),
-                  child: Align(
-                    alignment: AlignmentDirectional.center,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(500.0),
-                      child: Container(
-                        width: 275,
-                        height: 275,
-                        decoration: BoxDecoration(
-                          color: Colors.transparent,
-                        ),
-                        child: FittedBox(
-                          fit: BoxFit.cover,
-                          child: Padding(
-                            padding: const EdgeInsets.only(
-                              left: 30,
-                              top: 30,
-                            ),
-                            child: Image(
-                              image: AssetImage(
-                                'assets/images/others/image 81.png',
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: defaultPadding / 3),
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: defaultPadding),
+                              child: Text(
+                                'Watch movies in Virtual Reality',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: white,
+                                  fontSize: titleSize + 8,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(horizontal:defaultPadding),
+                              child: Text(
+                                'Download and watch offline wherever you are',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    color: grey,
+                                    fontSize: subtitleSize + 4,
+                                    fontWeight: FontWeight.w300),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(vertical:defaultPadding),
+                              child: OutlineGradientButton(
+                                onTap: () {
+                                  print('object');
+                                },
+                                child: Text(
+                                  'Sign up',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: white,
+                                  ),
+                                ),
+                                gradient: LinearGradient(
+                                  colors: [neonPink, neonGreen],
+                                ),
+                                strokeWidth: 4,
+                                padding: EdgeInsets.symmetric(
+                                    vertical: 12,
+                                    horizontal: defaultPadding + 16),
+                                radius: Radius.circular(25),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Container(
+                color: bgColor,
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                    left: defaultPadding,
+                    right: defaultPadding,
+                  ),
+                  child: Text(
+                    'Watch movies in Virtual Realsity',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: white,
+                      fontSize: titleSize + 8,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                color: bgColor,
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                    left: defaultPadding,
+                    right: defaultPadding,
+                  ),
+                  child: Text(
+                    'Watch movies in Virtual Reality',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: white,
+                      fontSize: titleSize + 8,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Container(
+            alignment: Alignment(0, .9),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    _controller.jumpToPage(2);
+                  },
+                  child: Text(
+                    'Skip',
+                    style: TextStyle(
+                      fontSize: subtitleSize + 4,
+                      color: white,
+                    ),
+                  ),
+                ),
+                SmoothPageIndicator(
+                  controller: _controller,
+                  count: 3,
+                  effect: ExpandingDotsEffect(
+                    activeDotColor: neonBlue,
+                    dotWidth: 10,
+                    dotHeight: 10,
+                  ),
+                ),
+                _onLastPage
+                    ? GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, 'home');
+                        },
+                        child: Text(
+                          'Done',
+                          style: TextStyle(
+                              fontSize: subtitleSize + 4, color: white),
+                        ),
+                      )
+                    : GestureDetector(
+                        onTap: () {
+                          _controller.nextPage(
+                              duration: Duration(
+                                milliseconds: 500,
+                              ),
+                              curve: Curves.easeIn);
+                        },
+                        child: Text(
+                          'Next',
+                          style: TextStyle(
+                            fontSize: subtitleSize + 4,
+                            color: white,
                           ),
                         ),
                       ),
-                    ),
-                  ),
-                ),
               ],
             ),
           ),
         ],
-        onDone: () {
-          Navigator.pushNamed(context, 'home');
-        },
-        onSkip: () {
-          Navigator.pushNamed(context, 'home');
-        },
-        showSkipButton: true,
-        done: Text(
-          'Done',
-          style: TextStyle(fontSize: subtitleSize + 4, color: white),
-        ),
-        next: Icon(
-          Icons.arrow_forward,
-          color: Colors.red,
-        ),
-        skip: Text(
-          'skip',
-          style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: fontSize - 10,
-              color: Colors.white),
-        ),
-        dotsDecorator: DotsDecorator(
-          size: Size.square(shapeSizing / 10),
-          activeSize: Size(shapeSizing / 10, shapeSizing / 10),
-          color: grey,
-          activeColor: neonBlue,
-          spacing: EdgeInsets.symmetric(horizontal: 3),
-          activeShape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(shapeSizing / 2),
-          ),
-        ),
       ),
     );
   }
