@@ -35,7 +35,7 @@ class _IntroScreenState extends State<IntroScreen> {
                 subtitle: 'Download and watch offline wherever you are',
               ),
               IntroContent(
-                title: 'Never gonna give u up',
+                title: 'Never gonna give yu up',
                 subtitle: 'Never gonna let u down',
               ),
               IntroContent(
