@@ -6,26 +6,32 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:  Column(
+      body: Column(
         children: [
           Center(
-          child: Text(
-            'home screen test test',
-            style: TextStyle(fontSize: 40),
+            child: Text(
+              'home screen test test',
+              style: TextStyle(fontSize: 40),
+            ),
           ),
-    ),
-    Center(
-          child: Text(
-            'home screen test test',
-            style: TextStyle(fontSize: 40),
+          Center(
+            child: Text(
+              'home screen test test',
+              style: TextStyle(fontSize: 40),
+            ),
           ),
-    ),
-    Center(
-          child: Text(
-            'home screen test test',
-            style: TextStyle(fontSize: 40),
+          Center(
+            child: Text(
+              'home screen test test',
+              style: TextStyle(fontSize: 40),
+            ),
           ),
-    ),
+          Center(
+            child: Text(
+              'home screen test test',
+              style: TextStyle(fontSize: 40),
+            ),
+          ),
         ],
       ),
     );
