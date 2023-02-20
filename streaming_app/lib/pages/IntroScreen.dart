@@ -5,7 +5,6 @@ import 'package:streaming_app/constants.dart';
 
 import '../widgets/IntroContent.dart';
 
-
 class IntroScreen extends StatefulWidget {
   const IntroScreen({super.key});
 

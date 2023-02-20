@@ -73,7 +73,7 @@ class IntroContent extends StatelessWidget {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsets.symmetric(vertical: defaultPadding),
+                        const EdgeInsets.only(top: defaultPadding),
                     child: SignUpButton(),
                   ),
                 ],
