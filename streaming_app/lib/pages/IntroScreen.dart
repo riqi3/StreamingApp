@@ -30,9 +30,18 @@ class _IntroScreenState extends State<IntroScreen> {
               });
             },
             children: [
-              IntroContent(),
-              IntroContent(),
-              IntroContent(),
+              IntroContent(
+                title: 'Watch movies in Virtual Reality',
+                subtitle: 'Download and watch offline wherever you are',
+              ),
+              IntroContent(
+                title: 'Never gonna give u up',
+                subtitle: 'Never gonna let u down',
+              ),
+              IntroContent(
+                title: 'Never gonna run around and...',
+                subtitle: 'desert u',
+              ),
             ],
           ),
           Container(

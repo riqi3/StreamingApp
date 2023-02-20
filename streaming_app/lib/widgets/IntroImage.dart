@@ -23,12 +23,14 @@ class IntroImage extends StatelessWidget {
           child: Container(
             decoration: BoxDecoration(
               border: GradientBoxBorder(
-                gradient: LinearGradient(colors: [
-                  neonPink,
-                  bgColor,
-                  bgColor,
-                  neonGreen,
-                ]),
+                gradient: LinearGradient(
+                  colors: [
+                    neonPink,
+                    bgColor,
+                    bgColor,
+                    neonGreen,
+                  ],
+                ),
                 width: 5,
               ),
               borderRadius: BorderRadius.circular(200),
@@ -45,9 +47,9 @@ class IntroImage extends StatelessWidget {
                   fit: BoxFit.cover,
                   child: Padding(
                     padding: const EdgeInsets.only(
-                     left: 120,
-                     top: 10,
-                     bottom: 30,
+                      left: 120,
+                      top: 10,
+                      bottom: 30,
                     ),
                     child: RotationTransition(
                       turns: new AlwaysStoppedAnimation(330 / 360),
