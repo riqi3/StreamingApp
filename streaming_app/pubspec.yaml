@@ -39,8 +39,8 @@ dependencies:
   flutter_rating_bar: ^4.0.1
   clippy_flutter: ^2.0.0-nullsafety.1
   gradient_borders: ^1.0.0
+  gradient_widgets: ^0.6.0
   outline_gradient_button: ^2.0.0+1
-  responsive_flutter: ^0.0.4
 
 dev_dependencies:
   flutter_test:
@@ -51,7 +51,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^2.0.0
+  # flutter_lints: ^2.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -81,6 +81,16 @@ flutter:
     - assets/images/artists/image 79.png
     - assets/images/artists/image 80.png
 
+    - assets/icons/home.png
+    - assets/icons/add.png
+    - assets/icons/back.png
+    - assets/icons/categories.png
+    - assets/icons/download.png
+    - assets/icons/menu.png
+    - assets/icons/play.png
+    - assets/icons/play-tv.png
+    - assets/icons/blank.png
+    
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

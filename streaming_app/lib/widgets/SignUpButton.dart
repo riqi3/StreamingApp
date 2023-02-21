@@ -18,17 +18,17 @@ class SignUpButton extends StatelessWidget {
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
-      offset: Offset(-30, 0),
-      color: neonPink.withOpacity(.5),
-      blurRadius: 20,
-      spreadRadius: -30,
-    ),
-    BoxShadow(
-      offset: Offset(30, 0),
-      color: neonGreen.withOpacity(.5),
-      blurRadius: 20,
-      spreadRadius: -30,
-    ),
+            offset: Offset(-30, 0),
+            color: neonPink.withOpacity(.5),
+            blurRadius: 30,
+            spreadRadius: -30,
+          ),
+          BoxShadow(
+            offset: Offset(30, 0),
+            color: neonGreen.withOpacity(.5),
+            blurRadius: 30,
+            spreadRadius: -30,
+          ),
         ],
       ),
       child: OutlineGradientButton(
@@ -48,9 +48,9 @@ class SignUpButton extends StatelessWidget {
             neonGreen,
           ],
         ),
-        strokeWidth: 4,
-        padding: EdgeInsets.symmetric(
-            vertical: 12, horizontal: defaultPadding + 16),
+        strokeWidth: 3,
+        padding:
+            EdgeInsets.symmetric(vertical: 12, horizontal: shapeSizing-40,),
         radius: Radius.circular(25),
       ),
     );
