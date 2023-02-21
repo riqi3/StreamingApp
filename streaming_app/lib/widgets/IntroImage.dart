@@ -26,12 +26,12 @@ class IntroImage extends StatelessWidget {
                 gradient: LinearGradient(
                   colors: [
                     neonPink,
-                    bgColor,
-                    bgColor,
+                    bgColor.withOpacity(.1),
+                    bgColor.withOpacity(.1),
                     neonGreen,
                   ],
                 ),
-                width: 5,
+                width: 3,
               ),
               borderRadius: BorderRadius.circular(200),
             ),

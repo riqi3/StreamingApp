@@ -56,7 +56,7 @@ class _IntroScreenState extends State<IntroScreen> {
                   child: Text(
                     'Skip',
                     style: TextStyle(
-                      fontSize: subtitleSize + 4,
+                      fontSize: subtitleSize,
                       color: white,
                     ),
                   ),
@@ -64,10 +64,11 @@ class _IntroScreenState extends State<IntroScreen> {
                 SmoothPageIndicator(
                   controller: _controller,
                   count: 3,
-                  effect: ExpandingDotsEffect(
+                  effect: WormEffect(
                     activeDotColor: neonBlue,
-                    dotWidth: 10,
-                    dotHeight: 10,
+                    dotColor: Color.fromARGB(255, 92, 92, 92),
+                    dotWidth: 5,
+                    dotHeight: 5,
                   ),
                 ),
                 _onLastPage
@@ -78,7 +79,7 @@ class _IntroScreenState extends State<IntroScreen> {
                         child: Text(
                           'Done',
                           style: TextStyle(
-                              fontSize: subtitleSize + 4, color: white),
+                              fontSize: subtitleSize, color: white),
                         ),
                       )
                     : GestureDetector(
@@ -92,7 +93,7 @@ class _IntroScreenState extends State<IntroScreen> {
                         child: Text(
                           'Next',
                           style: TextStyle(
-                            fontSize: subtitleSize + 4,
+                            fontSize: subtitleSize,
                             color: white,
                           ),
                         ),
