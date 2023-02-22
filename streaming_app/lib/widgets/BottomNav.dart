@@ -13,12 +13,12 @@ class BottomNav extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
-      color: Colors.transparent,
+     color: white.withOpacity(.05),
       child: Container(
         decoration: BoxDecoration(
           border: Border(
             top: BorderSide(
-              color: Colors.transparent,
+              color: white.withOpacity(.05),
               width: 1.0,
             ),
           ),

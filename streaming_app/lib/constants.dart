@@ -6,6 +6,7 @@ const neonPink = Color(0xFFfe53bb);
 
 const white = Color(0xFFffffff);
 const grey = Color.fromARGB(255, 167, 167, 167);
+const trans = Color(0x00ffffff);
 
 const bgColor = Color(0xFF19191b);
 const ratingColor = Color(0xFFf2a33a);

@@ -52,7 +52,7 @@ class IntroImage extends StatelessWidget {
                       bottom: 30,
                     ),
                     child: RotationTransition(
-                      turns: new AlwaysStoppedAnimation(330 / 360),
+                      turns: new AlwaysStoppedAnimation(325 / 360),
                       child: Image(
                         image: AssetImage(
                           'assets/images/others/image 81.png',

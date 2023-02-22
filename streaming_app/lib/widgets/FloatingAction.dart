@@ -11,37 +11,43 @@ class FloatingAction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 40.0),
+      padding: const EdgeInsets.only(top: 40.0,),
       child: FloatingActionButton(
         onPressed: () {
           print('object3');
         },
-        backgroundColor: Color.fromARGB(255, 107, 107, 107),
-        child: Container(
-          height: 70,
-          width: 70,
-          decoration: BoxDecoration(
-            boxShadow: [
-              BoxShadow(
-                offset: Offset(0, 0),
-                color: white.withOpacity(.2),
-                blurRadius: 10,
-                spreadRadius: 10,
+        backgroundColor: bgColor,
+        child: RotationTransition(
+          turns: new AlwaysStoppedAnimation(35 / 360),
+          child: Container(
+            height: 70,
+            width: 70,
+            decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  offset: Offset(0, 0),
+                  color: white.withOpacity(.09),
+                  blurRadius: 5,
+                  spreadRadius: 5,
+                ),
+              ],
+              border: GradientBoxBorder(
+                gradient: LinearGradient(
+                  colors: [
+                    neonPink,
+                    neonGreen,
+                  ],
+                ),
+                width: 3,
               ),
-            ],
-            border: GradientBoxBorder(
-              gradient: LinearGradient(
-                colors: [
-                  neonPink,
-                  neonGreen,
-                ],
-              ),
-              width: 3,
+              borderRadius: BorderRadius.circular(30),
             ),
-            borderRadius: BorderRadius.circular(30),
-          ),
-          child: Image.asset(
-            'assets/icons/add.png',
+            child: RotationTransition(
+               turns: new AlwaysStoppedAnimation(325 / 360),
+              child: Image.asset(
+                'assets/icons/add.png',
+              ),
+            ),
           ),
         ),
       ),
