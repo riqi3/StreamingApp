@@ -5,6 +5,7 @@ import 'package:streaming_app/widgets/SectionTitle.dart';
 import 'package:widget_mask/widget_mask.dart';
 
 import '../constants.dart';
+import '../data.dart';
 import '../elements/BlurredBackground.dart';
 import '../widgets/FloatingAction.dart';
 import '../widgets/SearchBar.dart';
@@ -14,6 +15,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String s;
     return Scaffold(
       extendBody: true,
       backgroundColor: bgColor,
@@ -68,27 +70,42 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               SliverToBoxAdapter(
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      Container(
-                        width: 180,
+                child: Container(
+                  height: 180,
+                  child: ListView.builder(
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    itemCount: thumbnails.length,
+                    itemBuilder: (context, index) {
+                      String mask;
+                      if(index ==0){
+                        mask = mask0;
+                      }
+                      else if(index==thumbnails.length-1){
+                        mask =mask2;
+                      }
+                      else{
+                        mask = mask1;
+                      }
+                      return Container(
+                        margin: EdgeInsets.only(
+                          left: index == 0 ? 15 : 0,
+                          right: index == thumbnails.length-1 ? 15 : 0,
+                        ),
                         child: WidgetMask(
                           blendMode: BlendMode.srcATop,
                           childSaveLayer: true,
                           mask: Image.asset(
-                            tbn,
-                            fit: BoxFit.contain,
-                            alignment: Alignment.topRight,
+                            thumbnails[index]['image'],
+                            fit: BoxFit.cover,
+                            alignment: Alignment.center,
                           ),
                           child: Image.asset(
-                            mask1,
-                            width: 300,
+                            mask,
                           ),
                         ),
-                      ),
-                    ],
+                      );
+                    },
                   ),
                 ),
               ),
