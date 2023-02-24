@@ -26,6 +26,8 @@ const neonGradient = LinearGradient(
 const double defaultPadding = 32.0;
 const double defaultPadding2 = 25.0;
 
+const double thumbnailHeight = 180.0;
+
 const double shapeSizing = 100.0;
 const double fontSize = 32.0;
 

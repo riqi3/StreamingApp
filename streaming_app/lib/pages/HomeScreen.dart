@@ -8,6 +8,7 @@ import '../constants.dart';
 import '../data.dart';
 import '../elements/BlurredBackground.dart';
 import '../widgets/FloatingAction.dart';
+import '../widgets/MovieCarousel.dart';
 import '../widgets/SearchBar.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -15,7 +16,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String s;
     return Scaffold(
       extendBody: true,
       backgroundColor: bgColor,
@@ -23,6 +23,7 @@ class HomeScreen extends StatelessWidget {
         children: [
           BlurredBackground(),
           CustomScrollView(
+            physics: BouncingScrollPhysics(),
             slivers: [
               SliverPadding(
                 padding: EdgeInsets.symmetric(horizontal: defaultPadding),
@@ -69,54 +70,63 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SliverToBoxAdapter(
-                child: Container(
-                  height: 180,
-                  child: ListView.builder(
-                    shrinkWrap: true,
-                    scrollDirection: Axis.horizontal,
-                    itemCount: thumbnails.length,
-                    itemBuilder: (context, index) {
-                      String mask;
-                      if(index ==0){
-                        mask = mask0;
-                      }
-                      else if(index==thumbnails.length-1){
-                        mask =mask2;
-                      }
-                      else{
-                        mask = mask1;
-                      }
-                      return Container(
-                        margin: EdgeInsets.only(
-                          left: index == 0 ? 15 : 0,
-                          right: index == thumbnails.length-1 ? 15 : 0,
-                        ),
-                        child: WidgetMask(
-                          blendMode: BlendMode.srcATop,
-                          childSaveLayer: true,
-                          mask: Image.asset(
-                            thumbnails[index]['image'],
-                            fit: BoxFit.cover,
-                            alignment: Alignment.center,
-                          ),
-                          child: Image.asset(
-                            mask,
-                          ),
-                        ),
-                      );
-                    },
+              SliverPadding(
+                padding: EdgeInsets.only(
+                  bottom: defaultPadding,
+                ),
+                sliver: SliverToBoxAdapter(
+                  child: MovieCarousel(
+                    list: newMovies,
                   ),
                 ),
               ),
               SliverPadding(
-                padding: EdgeInsets.symmetric(horizontal: defaultPadding - 10),
+                padding: EdgeInsets.only(
+                  left: defaultPadding - 10,
+                  right: defaultPadding - 10,
+                  bottom: defaultPadding,
+                ),
                 sliver: SliverToBoxAdapter(
                   child: SectionTitle(
                     title: 'Upcoming Movies',
                     titleSize: titleSize2,
                     align: TextAlign.start,
                     weight: FontWeight.w300,
+                  ),
+                ),
+              ),
+              SliverPadding(
+                padding: EdgeInsets.only(
+                  bottom: defaultPadding,
+                ),
+                sliver: SliverToBoxAdapter(
+                  child: MovieCarousel(
+                    list: upcoming,
+                  ),
+                ),
+              ),
+                            SliverPadding(
+                padding: EdgeInsets.only(
+                  left: defaultPadding - 10,
+                  right: defaultPadding - 10,
+                  bottom: defaultPadding,
+                ),
+                sliver: SliverToBoxAdapter(
+                  child: SectionTitle(
+                    title: 'Your Favourites',
+                    titleSize: titleSize2,
+                    align: TextAlign.start,
+                    weight: FontWeight.w300,
+                  ),
+                ),
+              ),
+              SliverPadding(
+                padding: EdgeInsets.only(
+                  bottom: defaultPadding,
+                ),
+                sliver: SliverToBoxAdapter(
+                  child: MovieCarousel(
+                    list: newMovies,
                   ),
                 ),
               ),

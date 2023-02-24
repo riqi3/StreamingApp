@@ -1,4 +1,4 @@
-List<Map<String, dynamic>> thumbnails = [
+List<Map<String, dynamic>> newMovies = [
   {
     'title': 'Eternals',
     'image': 'assets/images/thumbnails/image 76.png',
@@ -27,6 +27,37 @@ List<Map<String, dynamic>> thumbnails = [
     'title': 'Sonic The Hedgehog 2',
     'image': 'assets/images/thumbnails/image 94.png',
   }
+];
+
+List<Map<String, dynamic>> upcoming = [
+  {
+    'title': 'Aquaman And The Lost Kingdom',
+    'image': 'assets/images/thumbnails/image 93.png',
+  },
+  {
+    'title': 'Sonic The Hedgehog 2',
+    'image': 'assets/images/thumbnails/image 94.png',
+  },
+  {
+    'title': 'The Matrix: Resurections',
+    'image': 'assets/images/thumbnails/image 92.png',
+  },
+  {
+    'title': 'Spider-Man: No Way Home',
+    'image': 'assets/images/thumbnails/image 91.png',
+  },
+  {
+    'title': 'The Batman',
+    'image': 'assets/images/thumbnails/image 84.png',
+  },
+  {
+    'title': 'Eternals',
+    'image': 'assets/images/thumbnails/image 76.png',
+  },
+  {
+    'title': 'Eternals',
+    'image': 'assets/images/thumbnails/image 90.png',
+  },
 ];
 
 List<Map<String, dynamic>> artists = [
