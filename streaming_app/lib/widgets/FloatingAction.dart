@@ -26,9 +26,9 @@ class FloatingAction extends StatelessWidget {
               boxShadow: [
                 BoxShadow(
                   offset: Offset(0, 0),
-                  color: white.withOpacity(.09),
-                  blurRadius: 5,
-                  spreadRadius: 5,
+                  color: white.withOpacity(.079),
+                  blurRadius: 7,
+                  spreadRadius: 7,
                 ),
               ],
               border: GradientBoxBorder(

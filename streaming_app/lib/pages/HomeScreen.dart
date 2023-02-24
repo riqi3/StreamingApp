@@ -1,12 +1,13 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:gradient_borders/gradient_borders.dart';
-import 'package:streaming_app/elements/BlurredShape.dart';
+
 import 'package:streaming_app/widgets/BottomNav.dart';
+import 'package:streaming_app/widgets/SectionTitle.dart';
+import 'package:widget_mask/widget_mask.dart';
 
 import '../constants.dart';
+import '../elements/BlurredBackground.dart';
 import '../widgets/FloatingAction.dart';
+import '../widgets/SearchBar.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -16,34 +17,95 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       extendBody: true,
       backgroundColor: bgColor,
-      body: SingleChildScrollView(
-        child: Row(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(top: shapeSizing * 6.5,),
-              child: Row(
-                children: [
-                  BlurredShape(
-                    shapeWidth: 100,
-                    shapeHeight: 100,
-                    shapeColor: neonGreen,
-                    leftPadding: 0,
-                    rightPadding: 0,
-                    topPadding: 0,
-                    bottomPadding: 0,
+      body: Stack(
+        children: [
+          BlurredBackground(),
+          CustomScrollView(
+            slivers: [
+              SliverPadding(
+                padding: EdgeInsets.symmetric(horizontal: defaultPadding),
+                sliver: SliverToBoxAdapter(
+                  child: Column(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.only(
+                            left: defaultPadding2 * 2,
+                            right: defaultPadding2 * 2,
+                            top: defaultPadding2 * 2),
+                        constraints: BoxConstraints(
+                          maxWidth: shapeSizing * 5,
+                        ),
+                        child: SectionTitle(
+                          title: 'What would you like to watch?',
+                          titleSize: fontSize,
+                          align: TextAlign.center,
+                          weight: FontWeight.bold,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                          vertical: defaultPadding,
+                        ),
+                        child: SearchBar(),
+                      ),
+                    ],
                   ),
-                  BackdropFilter(
-                    filter: ImageFilter.blur(
-                      sigmaX: 90.0,
-                      sigmaY: 90.0,
-                    ),
-                    child: Text(''),
-                  ),
-                ],
+                ),
               ),
-            ),
-          ],
-        ),
+              SliverPadding(
+                padding: EdgeInsets.only(
+                  left: defaultPadding - 10,
+                  right: defaultPadding - 10,
+                  bottom: defaultPadding,
+                ),
+                sliver: SliverToBoxAdapter(
+                  child: SectionTitle(
+                    title: 'New Movies',
+                    titleSize: titleSize2,
+                    align: TextAlign.start,
+                    weight: FontWeight.w300,
+                  ),
+                ),
+              ),
+              SliverToBoxAdapter(
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      Container(
+                        width: 180,
+                        child: WidgetMask(
+                          blendMode: BlendMode.srcATop,
+                          childSaveLayer: true,
+                          mask: Image.asset(
+                            tbn,
+                            fit: BoxFit.contain,
+                            alignment: Alignment.topRight,
+                          ),
+                          child: Image.asset(
+                            mask1,
+                            width: 300,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SliverPadding(
+                padding: EdgeInsets.symmetric(horizontal: defaultPadding - 10),
+                sliver: SliverToBoxAdapter(
+                  child: SectionTitle(
+                    title: 'Upcoming Movies',
+                    titleSize: titleSize2,
+                    align: TextAlign.start,
+                    weight: FontWeight.w300,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
       floatingActionButton: FloatingAction(),
       bottomNavigationBar: BottomNav(),

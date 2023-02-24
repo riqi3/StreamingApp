@@ -25,23 +25,29 @@ class IntroContent extends StatelessWidget {
           Stack(
             fit: StackFit.loose,
             children: [
-              BlurredShape(
-                shapeWidth: 120,
-                shapeHeight: 120,
-                shapeColor: neonPink,
-                leftPadding: 0,
-                rightPadding: 200,
-                topPadding: 0,
-                bottomPadding: 0,
+              Align(
+                alignment: Alignment.center,
+                child: BlurredShape(
+                  shapeWidth: 120,
+                  shapeHeight: 120,
+                  shapeColor: neonPink,
+                  leftPadding: 0,
+                  rightPadding: 220,
+                  topPadding: 0,
+                  bottomPadding: 0,
+                ),
               ),
-              BlurredShape(
-                shapeWidth: 200,
-                shapeHeight: 200,
-                shapeColor: neonGreen,
-                leftPadding: 230,
-                rightPadding: 0,
-                topPadding: 120,
-                bottomPadding: 0,
+              Align(
+                alignment: Alignment.center,
+                child: BlurredShape(
+                  shapeWidth: 200,
+                  shapeHeight: 200,
+                  shapeColor: neonGreen,
+                  leftPadding: 230,
+                  rightPadding: 0,
+                  topPadding: 120,
+                  bottomPadding: 0,
+                ),
               ),
               IntroImage(),
             ],

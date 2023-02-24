@@ -19,23 +19,20 @@ class BlurredShape extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Align(
-      alignment: Alignment.center,
-      child: Padding(
-        padding: EdgeInsets.only(
-          left: leftPadding,
-          right: rightPadding,
-          top: topPadding,
-          bottom: bottomPadding,
-        ),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(500.0),
-          child: Container(
-            width: shapeWidth,
-            height: shapeHeight,
-            decoration: BoxDecoration(
-              color: shapeColor,
-            ),
+    return Padding(
+      padding: EdgeInsets.only(
+        left: leftPadding,
+        right: rightPadding,
+        top: topPadding,
+        bottom: bottomPadding,
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(500.0),
+        child: Container(
+          width: shapeWidth,
+          height: shapeHeight,
+          decoration: BoxDecoration(
+            color: shapeColor,
           ),
         ),
       ),

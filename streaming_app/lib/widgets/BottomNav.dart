@@ -10,6 +10,8 @@ class BottomNav extends StatelessWidget {
     super.key,
   });
 
+
+
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
@@ -19,28 +21,40 @@ class BottomNav extends StatelessWidget {
           border: Border(
             top: BorderSide(
               color: white.withOpacity(.05),
-              width: 1.0,
+              width: 1.5,
             ),
           ),
         ),
         height: 70,
         child: new Row(
+
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            InkWell(
-              onTap: () {
-                print('object1');
-              },
-              child: Image.asset(
-                'assets/icons/home.png',
+            SizedBox(
+              height: 50,
+              child: InkWell(
+                onTap: () {
+                  print('object1');
+                },
+                highlightColor: Colors.transparent,
+                splashFactory: NoSplash.splashFactory,
+                child: Image.asset(
+                  'assets/icons/home.png',
+                ),
+                
               ),
             ),
-            InkWell(
-              onTap: () {
-                print('object2');
-              },
-              child: Image.asset(
-                'assets/icons/play-tv.png',
+            SizedBox(
+              height: 50,
+              child: InkWell(
+                onTap: () {
+                  print('object2');
+                },
+                child: Image.asset(
+                  'assets/icons/play-tv.png',
+                ),
+                highlightColor: Colors.transparent,
+                splashFactory: NoSplash.splashFactory,
               ),
             ),
             InkWell(
@@ -49,20 +63,31 @@ class BottomNav extends StatelessWidget {
                 'assets/icons/blank.png',
               ),
             ),
-            InkWell(
-              onTap: () {
-                print('object4');
-              },
-              child: Image.asset(
-                'assets/icons/categories.png',
+            SizedBox(
+              height: 50,
+              child: InkWell(
+                onTap: () {
+                  print('object4');
+                },
+                
+                child: Image.asset(
+                  'assets/icons/categories.png',
+                ),
+                highlightColor: Colors.transparent,
+                splashFactory: NoSplash.splashFactory,
               ),
             ),
-            InkWell(
-              onTap: () {
-                print('object5');
-              },
-              child: Image.asset(
-                'assets/icons/download.png',
+            SizedBox(
+              height: 50,
+              child: InkWell(
+                onTap: () {
+                  print('object5');
+                },
+                child: Image.asset(
+                  'assets/icons/download.png',
+                ),
+                highlightColor: Colors.transparent,
+                splashFactory: NoSplash.splashFactory,
               ),
             ),
           ],

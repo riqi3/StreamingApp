@@ -9,14 +9,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.10.0"
-  blur:
-    dependency: "direct main"
-    description:
-      name: blur
-      sha256: fd23f1247faee4a7d1a3efb6b7c3cea134f3b939d72e5f8d45233deb0776259f
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.1.0"
   boolean_selector:
     dependency: transitive
     description:
@@ -33,14 +25,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.1"
-  clippy_flutter:
-    dependency: "direct main"
-    description:
-      name: clippy_flutter
-      sha256: f63f487afe1233f7189f83154aa9f4903dddda61687b5b81ce4955250c133a07
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.0-nullsafety.1"
   clock:
     dependency: transitive
     description:
@@ -99,14 +83,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.0"
-  gradient_widgets:
-    dependency: "direct main"
-    description:
-      name: gradient_widgets
-      sha256: d337a8a329da9aefa50b82155d11875c1b9992982f65d15c805aa057a2670536
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.6.0"
   js:
     dependency: transitive
     description:
@@ -224,6 +200,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.4"
+  widget_mask:
+    dependency: "direct main"
+    description:
+      name: widget_mask
+      sha256: fa1f5b6b9ac7f7a300a67ae267191b329f3f812cf86ad7a0d03369dc68e5e732
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.0+0"
 sdks:
   dart: ">=2.19.1 <3.0.0"
   flutter: ">=2.5.0"
