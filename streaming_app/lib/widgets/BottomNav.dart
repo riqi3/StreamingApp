@@ -1,29 +1,30 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import 'package:streaming_app/constants.dart';
 
 import '../data.dart';
-import 'BotNavIcons.dart';
 
-class BottomNav extends StatelessWidget {
+class BottomNav extends StatefulWidget {
   const BottomNav({
     super.key,
   });
 
+  @override
+  State<BottomNav> createState() => _BottomNavState();
+}
 
-
+class _BottomNavState extends State<BottomNav> {
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
-     color: white.withOpacity(.05),
+      color: white.withOpacity(.05),
       child: ClipRRect(
         child: BackdropFilter(
           filter: ImageFilter.blur(
-                sigmaX: 2.0,
-                sigmaY: 2.0,
-              ),
+            sigmaX: 2.0,
+            sigmaY: 2.0,
+          ),
           child: Container(
             decoration: BoxDecoration(
               border: Border(
@@ -35,21 +36,21 @@ class BottomNav extends StatelessWidget {
             ),
             height: 70,
             child: new Row(
-        
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 SizedBox(
                   height: 50,
                   child: InkWell(
                     onTap: () {
-                      print('object1');
+                      setState(() {
+                        print('object1');
+                      });
                     },
                     highlightColor: Colors.transparent,
                     splashFactory: NoSplash.splashFactory,
                     child: Image.asset(
                       'assets/icons/home.png',
                     ),
-                    
                   ),
                 ),
                 SizedBox(
@@ -77,7 +78,6 @@ class BottomNav extends StatelessWidget {
                     onTap: () {
                       print('object4');
                     },
-                    
                     child: Image.asset(
                       'assets/icons/categories.png',
                     ),

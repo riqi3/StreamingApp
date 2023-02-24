@@ -84,6 +84,7 @@ flutter:
     - assets/images/artists/image 80.png
 
     - assets/icons/home.png
+    - assets/icons/home2.png
     - assets/icons/add.png
     - assets/icons/back.png
     - assets/icons/categories.png
