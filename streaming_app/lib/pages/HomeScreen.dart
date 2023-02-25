@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 
 import 'package:streaming_app/widgets/BottomNav.dart';
 import 'package:streaming_app/widgets/SectionTitle.dart';
-import 'package:widget_mask/widget_mask.dart';
 
 import '../constants.dart';
 import '../data.dart';
 import '../elements/BlurredBackground.dart';
-import '../widgets/FloatingAction.dart';
+import '../widgets/CircleGradientButton.dart';
 import '../widgets/MovieCarousel.dart';
 import '../widgets/SearchBar.dart';
 
@@ -105,7 +104,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-                            SliverPadding(
+              SliverPadding(
                 padding: EdgeInsets.only(
                   left: defaultPadding - 10,
                   right: defaultPadding - 10,
@@ -134,9 +133,21 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      floatingActionButton: FloatingAction(),
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(
+          top: 40.0,
+        ),
+        child: FloatingActionButton(
+          onPressed: () {
+            print('object');
+          },
+          backgroundColor: bgColor,
+          child: CircleGradientButton(image: add,),
+        ),
+      ),
       bottomNavigationBar: BottomNav(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
+

@@ -4,6 +4,8 @@ const neonGreen = Color(0xFF09fbd3);
 const neonBlue = Color(0xFF08f7f3);
 const neonPink = Color(0xFFfe53bb);
 
+const String add = 'assets/icons/add.png';
+const String play = 'assets/icons/play.png';
 const String tbn = 'assets/images/thumbnails/image 76.png';
 const String mask0 = 'assets/images/thumbnails/mask0.png';
 const String mask1 = 'assets/images/thumbnails/mask1.png';

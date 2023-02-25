@@ -16,9 +16,9 @@ class StreamingApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       routes: {
-        '/' :(context) => IntroScreen(),
+        '/' :(context) => MovieScreen(),
         'home': (context) => HomeScreen(),
-        'movie':(context) => MovieScreen(),
+        'movie':(context) => IntroScreen(),
       },
     );
   }

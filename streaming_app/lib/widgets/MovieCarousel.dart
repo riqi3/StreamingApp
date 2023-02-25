@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:widget_mask/widget_mask.dart';
 
 import '../constants.dart';
+import '../pages/MovieScreen.dart';
 
 class MovieCarousel extends StatelessWidget {
   const MovieCarousel({
@@ -9,7 +10,7 @@ class MovieCarousel extends StatelessWidget {
     required this.list,
   });
 
-  final List<Map<String, dynamic>>  list;
+  final List<Map<String, dynamic>> list;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class MovieCarousel extends StatelessWidget {
       height: thumbnailHeight,
       child: ListView.builder(
         shrinkWrap: true,
-        physics:BouncingScrollPhysics(),
+        physics: BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
         itemCount: list.length,
         itemBuilder: (context, index) {
@@ -31,7 +32,12 @@ class MovieCarousel extends StatelessWidget {
           }
           return InkWell(
             onTap: () {
-              print('object');              
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const MovieScreen(),
+                ),
+              );
             },
             child: Container(
               margin: EdgeInsets.only(
