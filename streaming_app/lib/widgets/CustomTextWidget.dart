@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:streaming_app/constants.dart';
 
-class SectionTitle extends StatelessWidget {
-  const SectionTitle({
+class CustomTextWidget extends StatelessWidget {
+  const CustomTextWidget({
     super.key,
     required this.title,
     required this.titleSize,
+    required this.color,
     required this.align,
     required this.weight,
   });
 
   final String title;
-  final double titleSize;
-  final TextAlign align;
-  final FontWeight weight;
+  final double? titleSize;
+  final Color? color;
+  final TextAlign? align;
+  final FontWeight? weight;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +23,7 @@ class SectionTitle extends StatelessWidget {
       maxLines: 2,
       textAlign: this.align,
       style: TextStyle(
-        color: white,
+        color: this.color,
         fontSize: titleSize,
         fontWeight: this.weight,
       ),

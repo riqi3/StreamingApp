@@ -131,6 +131,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.8.2"
+  show_hide_fab:
+    dependency: "direct main"
+    description:
+      name: show_hide_fab
+      sha256: "410e0654fae7e469ddcebc48d3f3b5bb694462eb91ff8646e0254173fe1dc377"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.0"
   sky_engine:
     dependency: transitive
     description: flutter

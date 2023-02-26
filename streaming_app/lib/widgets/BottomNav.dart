@@ -3,8 +3,6 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:streaming_app/constants.dart';
 
-import '../data.dart';
-
 class BottomNav extends StatefulWidget {
   const BottomNav({
     super.key,

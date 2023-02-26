@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:streaming_app/widgets/BottomNav.dart';
-import 'package:streaming_app/widgets/SectionTitle.dart';
+import 'package:streaming_app/widgets/CustomTextWidget.dart';
+
 
 import '../constants.dart';
 import '../data.dart';
@@ -37,9 +38,10 @@ class HomeScreen extends StatelessWidget {
                         constraints: BoxConstraints(
                           maxWidth: shapeSizing * 5,
                         ),
-                        child: SectionTitle(
+                        child: CustomTextWidget(
                           title: 'What would you like to watch?',
                           titleSize: fontSize,
+                          color: white,
                           align: TextAlign.center,
                           weight: FontWeight.bold,
                         ),
@@ -61,9 +63,10 @@ class HomeScreen extends StatelessWidget {
                   bottom: defaultPadding,
                 ),
                 sliver: SliverToBoxAdapter(
-                  child: SectionTitle(
+                  child: CustomTextWidget(
                     title: 'New Movies',
                     titleSize: titleSize2,
+                    color: white,
                     align: TextAlign.start,
                     weight: FontWeight.w300,
                   ),
@@ -86,9 +89,10 @@ class HomeScreen extends StatelessWidget {
                   bottom: defaultPadding,
                 ),
                 sliver: SliverToBoxAdapter(
-                  child: SectionTitle(
+                  child: CustomTextWidget(
                     title: 'Upcoming Movies',
                     titleSize: titleSize2,
+                    color: white,
                     align: TextAlign.start,
                     weight: FontWeight.w300,
                   ),
@@ -111,9 +115,10 @@ class HomeScreen extends StatelessWidget {
                   bottom: defaultPadding,
                 ),
                 sliver: SliverToBoxAdapter(
-                  child: SectionTitle(
+                  child: CustomTextWidget(
                     title: 'Your Favourites',
                     titleSize: titleSize2,
+                    color: white,
                     align: TextAlign.start,
                     weight: FontWeight.w300,
                   ),
@@ -142,7 +147,12 @@ class HomeScreen extends StatelessWidget {
             print('object');
           },
           backgroundColor: bgColor,
-          child: CircleGradientButton(image: add,),
+          child: CircleGradientButton(
+            image: add,
+            width: 70,
+            height: 70,
+            scale: .8,
+          ),
         ),
       ),
       bottomNavigationBar: BottomNav(),
@@ -150,4 +160,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-

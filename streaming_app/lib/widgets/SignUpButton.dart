@@ -1,10 +1,6 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 import 'package:outline_gradient_button/outline_gradient_button.dart';
-import 'package:streaming_app/elements/BlurredShape.dart';
-
 import '../constants.dart';
 
 class SignUpButton extends StatelessWidget {

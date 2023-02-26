@@ -40,6 +40,7 @@ dependencies:
   gradient_borders: ^1.0.0
   outline_gradient_button: ^2.0.0+1
   widget_mask: ^1.0.0+0
+  show_hide_fab: ^1.0.0
 
 dev_dependencies:
   flutter_test:
