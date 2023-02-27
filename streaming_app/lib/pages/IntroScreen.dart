@@ -23,6 +23,7 @@ class _IntroScreenState extends State<IntroScreen> {
       body: Stack(
         children: [
           PageView(
+            // physics: BouncingScrollPhysics(),
             controller: _controller,
             onPageChanged: (index) {
               setState(() {

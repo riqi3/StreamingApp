@@ -11,52 +11,46 @@ class IntroImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BackdropFilter(
-      filter: ImageFilter.blur(
-        sigmaX: 60.0,
-        sigmaY: 60.0,
-      ),
-      child: Align(
-        alignment: AlignmentDirectional.center,
-        child: RotationTransition(
-          turns: new AlwaysStoppedAnimation(35 / 360),
-          child: Container(
-            decoration: BoxDecoration(
-              border: GradientBoxBorder(
-                gradient: LinearGradient(
-                  colors: [
-                    neonPink,
-                    bgColor.withOpacity(.1),
-                    bgColor.withOpacity(.1),
-                    neonGreen,
-                  ],
-                ),
-                width: 3,
+    return Align(
+      alignment: AlignmentDirectional.center,
+      child: RotationTransition(
+        turns: new AlwaysStoppedAnimation(35 / 360),
+        child: Container(
+          decoration: BoxDecoration(
+            border: GradientBoxBorder(
+              gradient: LinearGradient(
+                colors: [
+                  neonPink,
+                  bgColor.withOpacity(.1),
+                  bgColor.withOpacity(.1),
+                  neonGreen,
+                ],
               ),
-              borderRadius: BorderRadius.circular(200),
+              width: 3,
             ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(200.0),
-              child: Container(
-                width: 275,
-                height: 275,
-                decoration: BoxDecoration(
-                  color: Colors.transparent,
-                ),
-                child: FittedBox(
-                  fit: BoxFit.cover,
-                  child: Padding(
-                    padding: const EdgeInsets.only(
-                      left: 120,
-                      top: 10,
-                      bottom: 30,
-                    ),
-                    child: RotationTransition(
-                      turns: new AlwaysStoppedAnimation(325 / 360),
-                      child: Image(
-                        image: AssetImage(
-                          'assets/images/others/image 81.png',
-                        ),
+            borderRadius: BorderRadius.circular(200),
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(200.0),
+            child: Container(
+              width: 275,
+              height: 275,
+              decoration: BoxDecoration(
+                color: Colors.transparent,
+              ),
+              child: FittedBox(
+                fit: BoxFit.cover,
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                    left: 120,
+                    top: 10,
+                    bottom: 30,
+                  ),
+                  child: RotationTransition(
+                    turns: new AlwaysStoppedAnimation(325 / 360),
+                    child: Image(
+                      image: AssetImage(
+                        'assets/images/others/image 81.png',
                       ),
                     ),
                   ),

@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 import '../constants.dart';
@@ -18,77 +20,84 @@ class IntroContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: bgColor,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Stack(
-            fit: StackFit.loose,
-            children: [
-              Align(
-                alignment: Alignment.center,
-                child: BlurredShape(
-                  shapeWidth: 120,
-                  shapeHeight: 120,
-                  shapeColor: neonPink,
-                  leftPadding: 0,
-                  rightPadding: 220,
-                  topPadding: 0,
-                  bottomPadding: 0,
-                ),
-              ),
-              Align(
-                alignment: Alignment.center,
-                child: BlurredShape(
-                  shapeWidth: 200,
-                  shapeHeight: 200,
-                  shapeColor: neonGreen,
-                  leftPadding: 230,
-                  rightPadding: 0,
-                  topPadding: 120,
-                  bottomPadding: 0,
-                ),
-              ),
-              IntroImage(),
-            ],
-          ),
-          Padding(
-            padding:
-                const EdgeInsets.symmetric(horizontal: defaultPadding / 3),
-            child: Column(
+      child: ClipRect(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Stack(
+              fit: StackFit.loose,
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(bottom: defaultPadding),
-                  child: Text(
-                    title,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: white,
-                      fontSize: titleSize + 8,
-                      fontWeight: FontWeight.bold,
+                Align(
+                  alignment: Alignment.center,
+                  child: BlurredShape(
+                    shapeWidth: 120,
+                    shapeHeight: 120,
+                    shapeColor: neonPink,
+                    leftPadding: 0,
+                    rightPadding: 220,
+                    topPadding: 0,
+                    bottomPadding: 0,
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.center,
+                  child: BlurredShape(
+                    shapeWidth: 200,
+                    shapeHeight: 200,
+                    shapeColor: neonGreen,
+                    leftPadding: 230,
+                    rightPadding: 0,
+                    topPadding: 120,
+                    bottomPadding: 0,
+                  ),
+                ),
+                BackdropFilter(
+                    filter: ImageFilter.blur(
+                      sigmaX: 60.0,
+                      sigmaY: 60.0,
                     ),
-                  ),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: defaultPadding),
-                  child: Text(
-                    subtitle,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        color: grey,
-                        fontSize: subtitleSize + 4,
-                        fontWeight: FontWeight.w300),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: defaultPadding),
-                  child: SignUpButton(),
-                ),
+                    child: IntroImage()),
               ],
             ),
-          ),
-        ],
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: defaultPadding / 3),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: defaultPadding),
+                    child: Text(
+                      title,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: white,
+                        fontSize: titleSize + 8,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: defaultPadding),
+                    child: Text(
+                      subtitle,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          color: grey,
+                          fontSize: subtitleSize + 4,
+                          fontWeight: FontWeight.w300),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: defaultPadding),
+                    child: SignUpButton(),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
